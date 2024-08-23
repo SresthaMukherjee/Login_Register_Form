@@ -15,7 +15,7 @@ app.post('/register',(req, res) => {
     .catch(err => res.json(err))
 })
 
-app.listen(5173, ()=>{
+app.listen(3000, ()=>{
     console.log("server is running")
 
 })
