@@ -10,9 +10,15 @@ app.use(cors());
 
 const connectDb = async () => {
   try {
-    const connectionInstance = await mongoose.connect(process.env.MONGO_URI, {
-      writeConcern: { w: "majority" },
-    });
+    // const connectionInstance = await mongoose.connect(process.env.MONGO_URI, {
+    //   writeConcern: { w: "majority" },
+    // });
+    const connectionInstance = await mongoose.connect(
+      "mongodb+srv://srestha2002:gaAVOj0Q8ReZpkRX@cluster1.rc5cxbz.mongodb.net/Employee?retryWrites=true&w=majority&appName=Cluster1",
+      {
+        writeConcern: { w: "majority" }
+      }
+    );
     console.log(
       "\nMongoDB connected successfully!\nDB HOST: ",
       connectionInstance.connection.host
